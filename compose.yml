@@ -1,0 +1,10 @@
+services:
+  ryu:
+    image: osrg/ryu
+    container_name: ryu-controller
+    ports:
+      - "6633:6633"
+    volumes:
+      - ./ryu-controller:/app:z
+    restart: unless-stopped
+    command: tail -f /dev/null
